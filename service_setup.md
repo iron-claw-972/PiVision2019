@@ -1,5 +1,5 @@
 # How to setup code autostart and reboot
-
+### Confirm connection
 ping raspberrypi.local
 
 ---
@@ -14,43 +14,43 @@ ssh pi@raspberrypi.local
 ### WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!
 ### remove line starting with raspberrypi from .ssh/known_hosts
 ---
-### update
+### Update
 sudo apt update
 sudo apt -y upgrade
 
 ---
-### change default password
+### Change default password
 sudo passwd pi
 
 ---
-### run config tool
+### Run config tool
 sudo raspi-config
 
 ---
-### and change Network Options -> Hostname
+### And change Network Options -> Hostname
 
 ssh pi@tic.local
-
 
 sudo apt -y install vim python-dev python-opencv python-matplotlib python-pip
 
 exit
 
 ---
-### on each one, change tic to toe or toe
+### On each one, change tic to toe or toe
 scp -r vision.service pi@tic.local:
 scp -r vision pi@tic.local:
 
 ssh pi@tic.local
 
 pip install flask
+
 ---
-### make sure app is working
+### Make sure app is working
 cd vision
 python app.py
 
 ---
-### make it always run
+### Make it always run
 sudo cp vision.service /etc/systemd/system/vision.service
 sudo systemctl enable vision
 sudo systemctl start vision
