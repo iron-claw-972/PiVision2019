@@ -38,3 +38,7 @@ self.sd.putNumber("visionCount", random.randint(1,999)) # Changes if vision dete
 ```
 ### service_setup.md
 This is a guide on how to connect to and setup a Raspberry Pi to start code on boot.
+
+### calibration640_480.npz
+This is the calibration data for the Microsoft HD Webcam, if another camera is used this file should be replaced.
+Tutorial: https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_calib3d/py_calibration/py_calibration.html
