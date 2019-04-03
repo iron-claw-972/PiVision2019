@@ -8,6 +8,17 @@ This is the main file, and it calls all of the other code. It runs the streaming
 # To run the vision and streaming code
 python2 app.py
 ```
+Alternatively
+```
+# Start vision
+sudo systemctl start vision
+
+# Stop vision
+sudo sytemctl  stop vision
+
+# Restart vision
+sudo systemctl restart vision
+```
 ### templates
 This directory stores templates, which contain the html code for the streaming website.
 ### camera.py
