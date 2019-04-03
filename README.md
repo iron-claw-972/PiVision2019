@@ -15,11 +15,12 @@ This handles the threading of the camera and the frame capture, which are passed
 ### detector.py
 This runs the computer vision code and looks for the vision targets in a given frame. It also posts the position and rotation data on Networktables:
 ```python
+# self.sd.putNumber(tableKey, value)
 self.sd.putNumber("piCount", random.randint(1, 999)) # Changes if code is running
-self.sd.putNumber("visionX", tvecs[0][0])
+self.sd.putNumber("visionX", tvecs[0][0]) # Translation of robot relative to target
 self.sd.putNumber("visionY", tvecs[1][0])
 self.sd.putNumber("visionZ", tvecs[2][0])
-self.sd.putNumber("visionRX", rvecs[0][0])
+self.sd.putNumber("visionRX", rvecs[0][0]) # Rotation of robot relative to target
 self.sd.putNumber("visionRY", rvecs[1][0])
 self.sd.putNumber("visionRZ", rvecs[2][0])
 self.sd.putNumber("visionCount", random.randint(1,999)) # Changes if vision detects a target
