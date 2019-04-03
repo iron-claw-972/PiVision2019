@@ -1,0 +1,14 @@
+<html>
+  <head>
+    <title>Video Feed</title>
+    <script>
+      setInterval(function() {
+          var myImageElement = document.getElementById('myImage');
+          myImageElement.src = "{{ url_for('video_feed') }}?rand=" + Math.random();
+      }, 3000);
+    </script>
+  </head>
+  <body>
+    <img id="myImage" style="width: 100%" src="{{ url_for('video_feed') }}">
+  </body>
+</html>

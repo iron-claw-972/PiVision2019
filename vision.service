@@ -1,0 +1,18 @@
+[Unit]
+Description=vision daemon
+After=network.target
+
+[Service]
+PIDFile=/run/vision/pid
+User=pi
+Group=pi
+RuntimeDirectory=vision
+WorkingDirectory=/home/pi/vision
+ExecStart=/usr/bin/python app.py
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+PrivateTmp=true
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
